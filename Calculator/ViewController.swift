@@ -12,5 +12,16 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var result: UILabel!
     
+    var userentersNumbers = false
+    
+    @IBAction func enterNumber (sender: UIButton) {
+        let digit = sender.currentTitle!
+        
+        if userentersNumbers {
+            result.Text = digit
+            userentersNumbers = true
+        }
+    }
+    
 }
 
