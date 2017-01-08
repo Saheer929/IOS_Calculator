@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         }
         
         switch operation {
-        case "+":performOperation1 || performOperation2 {$0 + $1}
+        case "+":performOperation1 {$0 + $1}
         case "−":performOperation1 {$1 - $0}
         case "×":performOperation1 {$0 * $1}
         case "÷":performOperation1 {$0 / $1}
