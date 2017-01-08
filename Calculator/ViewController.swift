@@ -52,7 +52,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func enterTapped(theButton: UIButton) {
+        if operation.text == "-" {
+        var answer = lastNumber.toInt()
+        } else if operation.text == "+" {
+            
+        } else {
         
+        }
+        
+        result.text = "0"
     }
 
 }
