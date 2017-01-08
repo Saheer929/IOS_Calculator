@@ -58,15 +58,16 @@ class ViewController: UIViewController {
         }
         
         switch operation {
-        case "+":performOperation {$0 + $1}
-        case "−":performOperation {$1 - $0}
-        case "×":performOperation {$0 * $1}
-        case "÷":performOperation {$0 / $1}
+        case "+":performOperation1 || performOperation2 {$0 + $1}
+        case "−":performOperation1 {$1 - $0}
+        case "×":performOperation1 {$0 * $1}
+        case "÷":performOperation1 {$0 / $1}
         default: break
         }
+    
     }
     
-    func performOperation (operation: (Double, Double) -> Double) {
+    func performOperation1 (operation: (Double, Double) -> Double) {
         if operandStank.count >= 2 {
             displayvalue = operation (operandStank.removeLast(), operandStank.removeLast())
             
@@ -75,14 +76,14 @@ class ViewController: UIViewController {
         
     }
 
-    func performOperation (operation: (Double) -> Double) {
+    func performOperation2 (operation: (Double) -> Double) {
         if operandStank.count >= 1 {
             displayvalue = operation (operandStank.removeLast())
             
             enter()
         }
     }
-    
+
     func add (op1: Double, op2: Double) -> Double {
         return op1 + op2
     }
