@@ -13,8 +13,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var result: UILabel!
     
     @IBAction func buttonTapped(theButton: UIButton) {
-        print(theButton.titleLabel?.text! as Any)
-    
+        if result.text == "0" {
+        result.text = theButton.titleLabel?.text
+            
+        } else {
+        result.text = result.text! + (theButton.titleLabel?.text)!
+            
+        }
     }
     
     @IBAction func plusTapped(theButton: UIButton) {
@@ -26,6 +31,10 @@ class ViewController: UIViewController {
         print(theButton.titleLabel?.text! as Any)
 
 }
+    
+    @IBAction func clearTapped(theButton: UIButton) {
+        result.text = "0"
+    }
 
 }
 
