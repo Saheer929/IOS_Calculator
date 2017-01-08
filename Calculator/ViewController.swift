@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         let digit = sender.currentTitle!
         
         if userentersNumbers {
-            result.Text = digit
+            result.text = digit
             userentersNumbers = true
         }
     }
