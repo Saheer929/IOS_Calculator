@@ -29,19 +29,30 @@ class ViewController: UIViewController {
     
     @IBAction func enter () {
         userentersNumbers = false
-        operandStank.append(result.text!)
+        operandStank.append(displayvalue)
+        
+        print("operandStack = \(operandStank)")
     }
     
     var displayvalue : Double {
         
         get {
-            return NSNumberFormattor ().NumberFromString(result.text!)!.doubleValue
-            
+            return NumberFormatter ().number(from: result.text!)!.doubleValue
         }set{
-            
+            result.text = "\(newValue)"
+            userentersNumbers = false
         }
+        
+        }
+    
+    @IBAction func clear () {
+        displayvalue = 0
+        result.text = "\(displayvalue)"
     }
-}
+    
+    @IBAction func operate (sender: UIButton) {
+    
+    }
 
 
 

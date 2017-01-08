@@ -46,6 +46,7 @@
                                     <color key="titleShadowColor" red="0.96456640125337767" green="0.9675774040980446" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="enter" destination="BYZ-38-t0r" eventType="touchUpInside" id="zeX-AY-ifN"/>
                                     <action selector="enterNumberWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iHu-eB-ui2"/>
                                 </connections>
                             </button>
