@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func performOperation (operation: (Double) -> Double) {
+    func performOperation (operation: (Double, Double) -> Double) {
         if operandStank.count >= 2 {
             displayvalue = operation (operandStank.removeLast(), operandStank.removeLast())
             
