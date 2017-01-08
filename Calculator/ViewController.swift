@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var result: UILabel!
+    @IBOutlet var operation: UILabel!
     
     @IBAction func buttonTapped(theButton: UIButton) {
         if result.text == "0" {
@@ -34,6 +35,10 @@ class ViewController: UIViewController {
     
     @IBAction func clearTapped(theButton: UIButton) {
         result.text = "0"
+    }
+    
+    @IBAction func enterTapped(theButton: UIButton) {
+        
     }
 
 }
