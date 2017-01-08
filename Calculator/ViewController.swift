@@ -26,7 +26,16 @@ class ViewController: UIViewController {
     
     @IBAction func plusTapped(theButton: UIButton) {
         print(theButton.titleLabel?.text! as Any)
-
+        if operation.text == "" {
+            operation.text = "+"
+            lastNumber = result.text!
+            result.text = "0"
+            
+        } else {
+            
+            result.text = nil
+            operation.text = "+"
+    }
     }
 
     @IBAction func minusTapped(theButton: UIButton) {
@@ -38,11 +47,11 @@ class ViewController: UIViewController {
             
         } else {
         
-        
+        result.text = nil
         operation.text = "-"
         
-        }
-}
+    }
+    }
     
     @IBAction func clearTapped(theButton: UIButton) {
         result.text = "0"
@@ -50,18 +59,30 @@ class ViewController: UIViewController {
         lastNumber = ""
         
     }
-    
+
     @IBAction func enterTapped(theButton: UIButton) {
-        if operation.text == "-" {
-        var answer = lastNumber.toInt()
-        } else if operation.text == "+" {
+        var num1 = lastNumber.toInt()
+        var num2 = result.text.toInt()
+        if !num1 || !num2 {
+        showError()
+        return
             
+        }
+        var answer : Integer = 0
+        if operation.text == "-" {
+        answer = num1 - num2
+        } else if operation.text == "+" {
+        answer = num1 + num2
         } else {
-        
+        showError()
+        return
         }
         
-        result.text = "0"
+        print(answer)
+    }
+
+    func showError () {
+        print("There Was An Error")
     }
 
 }
-
