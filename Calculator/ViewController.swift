@@ -25,5 +25,23 @@ class ViewController: UIViewController {
         }
     }
     
+    var operandStank = Array<Double>()
+    
+    @IBAction func enter () {
+        userentersNumbers = false
+        operandStank.append(result.text!)
+    }
+    
+    var displayvalue : Double {
+        
+        get {
+            return NSNumberFormattor ().NumberFromString(result.text!)!.doubleValue
+            
+        }set{
+            
+        }
+    }
 }
+
+
 
