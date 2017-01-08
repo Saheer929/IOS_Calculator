@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var lastNumber: String = ""
     @IBOutlet weak var result: UILabel!
     @IBOutlet var operation: UILabel!
     
@@ -30,11 +31,24 @@ class ViewController: UIViewController {
 
     @IBAction func minusTapped(theButton: UIButton) {
         print(theButton.titleLabel?.text! as Any)
-
+        if operation.text == "" {
+        operation.text = "-"
+        lastNumber = result.text!
+        result.text = "0"
+            
+        } else {
+        
+        
+        operation.text = "-"
+        
+        }
 }
     
     @IBAction func clearTapped(theButton: UIButton) {
         result.text = "0"
+        operation.text = ""
+        lastNumber = ""
+        
     }
     
     @IBAction func enterTapped(theButton: UIButton) {
