@@ -68,7 +68,7 @@ class ViewController: UIViewController {
         return
         }
         
-        var answer : Integer = 0
+        var answer : IntegerLiteralType = 0
         if operation.text == "-" {
         answer = num1! - num2!
             
