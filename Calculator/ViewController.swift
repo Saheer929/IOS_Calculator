@@ -78,7 +78,7 @@ class ViewController: UIViewController {
         return
         }
         
-        print(answer)
+        result.text = "\(answer)"
     }
 
     func showError () {
