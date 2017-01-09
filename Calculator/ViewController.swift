@@ -35,7 +35,7 @@ class ViewController: UIViewController {
             
             result.text = nil
             operation.text = "+"
-    }
+        }
     }
 
     @IBAction func minusTapped(theButton: UIButton) {
@@ -49,8 +49,7 @@ class ViewController: UIViewController {
         
         result.text = nil
         operation.text = "-"
-        
-    }
+        }
     }
     
     @IBAction func clearTapped(theButton: UIButton) {
@@ -61,27 +60,35 @@ class ViewController: UIViewController {
     }
 
     @IBAction func enterTapped(theButton: UIButton) {
-        var num1 = lastNumber.toInt()
-        var num2 = result.text.toInt()
-        if !num1 || !num2 {
+        let num1 = Int(result.text!)
+        let num2 = Int(result.text!)
+        if !(num1 != nil) || !(num2 != nil) {
+            
         showError()
         return
-            
         }
+        
         var answer : Integer = 0
         if operation.text == "-" {
-        answer = num1 - num2
+        answer = num1! - num2!
+            
         } else if operation.text == "+" {
-        answer = num1 + num2
+            
+        answer = num1! + num2!
+            
         } else {
+            
         showError()
         return
         }
         
         result.text = "\(answer)"
+        operation.text = ""
+        lastNumber = ""
     }
 
     func showError () {
+        //TODO:
         print("There Was An Error")
     }
 
