@@ -1,5 +1,7 @@
 # Calculator
 
+**Summary:**
+
 This iOS application was created as a simple calculator. Addition and subtraction functions.
 
 **The application offers the following features:**
